@@ -1,0 +1,24 @@
+[build]
+  # Install backend dependencies, frontend dependencies, and build the frontend
+  command = "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend"
+  
+  # The directory to deploy to Netlify CDN
+  publish = "frontend/build"
+  
+  # Where Netlify should look for serverless functions
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_ENV = "production"
+
+# Redirect API requests to the Netlify serverless function
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+
+# Redirect all other requests to index.html (for React Router)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
