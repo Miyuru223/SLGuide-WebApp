@@ -14,7 +14,7 @@ A full-stack MERN web application for tourists to discover Sri Lanka's historica
 - 📱 Responsive design for mobile & desktop
 
 ### Admin Panel
-- 🔐 **Secure Login** — JWT-based authentication (username: `admin`, password: `admin123`)
+- 🔐 **Secure Login** — JWT-based authentication
 - 📊 **Dashboard** — Stats overview and recent entries
 - 🏛️ **Manage Destinations** — Add, edit, delete with photo uploads
 - 🏨 **Manage Hotels** — Add, edit, delete with amenities & photos
@@ -64,9 +64,9 @@ Create a `.env` file in the `backend/` folder:
 ```env
 PORT=5000
 MONGODB_URI=mongodb://localhost:27017/slguide
-JWT_SECRET=slguide_super_secret_key_2024
-ADMIN_USERNAME=admin
-ADMIN_PASSWORD=admin123
+JWT_SECRET=your_jwt_secret_here
+ADMIN_USERNAME=your_admin_username
+ADMIN_PASSWORD=your_admin_password
 ```
 
 > **MongoDB Atlas:** Replace `MONGODB_URI` with your Atlas connection string.
@@ -138,11 +138,7 @@ npm run dev        # runs both servers simultaneously
 
 Navigate to: **http://localhost:3000/admin/login**
 
-Default credentials:
-- **Username:** `admin`
-- **Password:** `admin123`
-
-> Change these in the backend `.env` file for production.
+> **Note:** Make sure to set your custom credentials in the `.env` file for your environment before attempting to log in.
 
 ---
 
